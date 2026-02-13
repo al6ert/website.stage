@@ -1,1 +1,1 @@
-Sitemap: https://persualia.com/ca/sitemap.xml
+Sitemap: https://al6ert.github.io/website.stage/ca/sitemap.xml
