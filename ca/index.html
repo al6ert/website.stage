@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="ca" data-theme="persualia">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <!-- Título dinámico para home con i18n -->
+    <title>Persualia - Màrqueting Conversacional | Persualia</title>
+    <meta property="og:title" content="Persualia - Màrqueting Conversacional" />
+    <meta property="twitter:title" content="Persualia - Màrqueting Conversacional" />
+    <meta name="description" content="Agencia de marketing conversacional. Copy que conecta y resultados que se pueden medir." />
+    <meta property="og:description" content="Agencia de marketing conversacional. Copy que conecta y resultados que se pueden medir." />
+    <meta property="og:url" content="https://persualia.com/" />
+    <meta property="og:site_name" content="Persualia" />
+    <meta property="og:type" content="website" />
+    
+    
+    
+    
+    
+    
+    
+    <link rel="canonical" href="https://persualia.com/" />
+    
+      
+      
+      
+        
+        
+        
+          
+          
+          <link rel="alternate" hreflang="es" href="https://persualia.com/" />
+        
+      
+        
+        
+        
+          
+          
+          <link rel="alternate" hreflang="ca" href="https://persualia.com/ca/" />
+        
+      
+        
+        
+        
+          
+          
+          <link rel="alternate" hreflang="en" href="https://persualia.com/en/" />
+        
+      
+      <link rel="alternate" hreflang="x-default" href="https://persualia.com/" />
+    
+    
+    
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--link rel="stylesheet" href="/assets/css/typography.css"-->
+    <link rel="stylesheet" href="/assets/css/fa.css">
+    <link rel="stylesheet" href="/assets/css/material-icons.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/svg/persualia-logo.svg">
+
+    <link type="application/atom+xml" rel="alternate" href="https://persualia.com/ca/feed.xml" title="Persualia" />
+    
+    <!-- React CDN for development only -->
+    
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow">
+</head>
+
+  <body>
+    <header class="navbar bg-base-300 shadow-sm sticky top-0 z-50 px-4 md:px-8" data-i18n-header>
+  <div class="navbar-start gap-2">
+    <!-- Mobile Dropdown Menu - Moved to the left, before logo -->
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Abrir menú móvil">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow-lg border border-base-300">
+        <li><a href="/ca/" data-i18n-key="navigation.home" data-i18n-scope="header" class="text-base-content hover:bg-base-300 transition-colors"><span class="font-medium">Inicio</span></a></li>
+        <li><a href="/ca/blog/" data-i18n-key="navigation.blog" data-i18n-scope="header" class="text-base-content hover:bg-base-300 transition-colors"><span class="font-medium">Blog</span></a></li>
+      </ul>
+    </div>
+    
+    <!-- Logo with text - text only visible from md breakpoint -->
+    <a href="/ca/" class="btn btn-ghost text-primary text-xl p-0 hover:bg-transparent hover:scale-100 active:scale-100 border-0 focus:outline-none">
+      <img src="/assets/images/svg/persualia-logo.svg" alt="Persualia Logo" class="h-10 w-10 rounded">
+      <span class="hidden md:inline" data-i18n-key="brand.title" data-i18n-scope="header">
+        Persualia
+      </span>
+    </a>
+  </div>
+  
+  <!--div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 m-0">
+      <li><a href="/ca/" data-i18n-key="navigation.home" data-i18n-scope="header">Inicio</a></li>
+      <li><a href="/ca/about/" data-i18n-key="navigation.about" data-i18n-scope="header">Acerca de</a></li>
+      <li><a href="/ca/blog/" data-i18n-key="navigation.blog" data-i18n-scope="header">Blog</a></li>
+      <li><a href="/ca/contact/" data-i18n-key="navigation.contact" data-i18n-scope="header">Contacto</a></li>
+      <li><a href="/ca/persualia-demo/" data-i18n-key="navigation.persualia_demo" data-i18n-scope="header">Demo persualia</a></li>
+      <li><a href="/ca/persualia-guide/" data-i18n-key="navigation.persualia_guide" data-i18n-scope="header">Guía persualia</a></li>
+    </ul>
+  </div-->
+  
+  <div class="navbar-end gap-2">
+    
+    
+    
+    <!-- Blog Button - Hidden when dropdown is visible (below lg) -->
+    <a href='/ca/blog/' class="btn btn-outline btn-primary mr-2 hidden lg:flex" data-i18n-key="navigation.blog" data-i18n-scope="header">
+      Blog
+    </a>
+    
+    <!-- Contact Button with Email Icon - Text hidden below md -->
+    <a href="mailto:mail@persualia.com" class="btn btn-primary">
+      <span class="material-symbols-outlined text-2xl">mail</span>
+      <span class="hidden md:inline" data-i18n-key="navigation.contact_button" data-i18n-scope="header">
+        Contactar
+      </span>
+    </a>
+
+    <!-- Language Selector -->
+    <div class="mr-2">
+      <!-- Language Selector - Daisy UI 5 -->
+<!-- Clases para detección de Tailwind: flag flag-es flag-ca flag-en -->
+<div class="dropdown dropdown-end">
+  <div tabindex="0" role="button" class="btn btn-ghost gap-2" id="language-btn">
+    <div class="avatar">
+      <div class="w-5 h-5 rounded">
+        <img id="current-flag" src="/assets/images/languages/es.svg" alt="Current language" />
+      </div>
+    </div>
+    <span class="hidden md:inline text-sm font-medium" id="current-lang">Español</span>
+    <svg class="hidden md:block w-4 h-4 fill-current opacity-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
+      <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+    </svg>
+  </div>
+  <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow-lg border border-base-300">
+    <li>
+      <button data-lang="es" class="language-option justify-start gap-3 p-3 hover:bg-base-300 transition-colors">
+        <div class="avatar">
+          <div class="w-5 h-5 rounded">
+            <img src="/assets/images/languages/es.svg" alt="Español" />
+          </div>
+        </div>
+        <span class="font-medium">Español</span>
+      </button>
+    </li>
+    <li>
+      <button data-lang="ca" class="language-option justify-start gap-3 p-3 hover:bg-base-300 transition-colors">
+        <div class="avatar">
+          <div class="w-5 h-5 rounded">
+            <img src="/assets/images/languages/ca.svg" alt="Català" />
+          </div>
+        </div>
+        <span class="font-medium">Català</span>
+      </button>
+    </li>
+    <li>
+      <button data-lang="en" class="language-option justify-start gap-3 p-3 hover:bg-base-300 transition-colors">
+        <div class="avatar">
+          <div class="w-5 h-5 rounded">
+            <img src="/assets/images/languages/en.svg" alt="English" />
+          </div>
+        </div>
+        <span class="font-medium">English</span>
+      </button>
+    </li>
+  </ul>
+</div>
+
+    </div>
+    
+  </div>
+</header>
+
+    
+    <main class="min-h-screen">
+      <script id="permalink-map" type="application/json">
+{"es":"/","en":"/en/","ca":"/ca/"}
+</script>
+
+<!-- Hero Section - DaisyUI 5 Pure with Gradient Background -->
+<div class="hero">   
+  <!-- Contenido Hero -->
+  <div class="text-center md:text-left ">
+    
+    <!-- Overline -->
+    <div class="badge badge-primary badge-lg">
+      Màrqueting Conversacional
+    </div>
+    
+    <!-- Título Principal -->
+    <h1 class="">
+      Persualia
+
+    </h1>
+    
+    <!-- Subtítulo -->
+    <h2 class="text-primary">
+      Com entenem això del màrqueting
+    </h2>
+    
+    <!-- Descripción -->
+    <div class="prose text-left [&>p]:my-5">
+      <h4 id="som-una-agència-de-màrqueting-amb-dues-obsessions-el-copy-que-connecta-i-els-resultats-que-es-poden-mesurar">Som una agència de màrqueting amb dues obsessions: el copy que connecta i els resultats que es poden mesurar.</h4>
+
+<p>Busquem paraules amb intenció, tecnologia que resol i estratègies enfocades a resultats.</p>
+
+<p>Creiem que persuadir va més enllà de comunicar. És connectar amb qui t’escolta, explicar una història amb sentit i saber interpretar el comportament de la teva audiència. Per això combinem storytelling creatiu amb tecnologia intel·ligent.</p>
+
+<p>Fem que el teu missatge arribi, impacti i converteixi. Amb cap, cor i recursos tècnics.</p>
+
+    </div>
+    
+    <!-- CTAs -->
+    <div class="cta-row md:justify-start gap-4 my-8">
+      <a href="mailto:mail@persualia.com" class="btn btn-primary btn-lg ">
+        Parlem
+      </a>
+      <a href="#products" class="btn btn-outline btn-lg ">
+        Productes
+      </a>
+    </div>
+    
+    <!-- Trust badges -->
+    <div class="cta-row flex-row flex-wrap  text-sm md:justify-start opacity-70">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-rounded">insights</span>
+        Resultats medibles
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-rounded">edit</span>
+        Copy que conecta
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-rounded">psychology</span>
+        IA amb criteri humà
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Feature Rows Section -->
+<!-- <section class="py-16 lg:py-24"> -->
+<section class="section">
+  <div class="container">
+    <!-- Section Header -->
+    <h2 class="section__header">
+      Així pensem, així actuem
+    </h2>
+    
+    
+    
+    <!-- Feature Rows -->
+    <div class="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8">
+      
+      
+      
+
+<!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
+<div class="
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
+   
+    sm:grid-cols-[auto_1fr] 
+   
+  ">
+  <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
+  
+  <figure class=" flex justify-center items-center mx-auto sm:mx-0 w-40">
+    <img
+      src="/assets/images/home/StrategyIcon2.webp"
+      alt="Característica"
+      class="rounded-xl object-cover w-full h-auto" />
+  </figure>
+  
+
+  <!-- Card Body (Text Content) -->
+  <div class="card-body px-0  pr-0  pt-0">
+    <div class="prose lg:prose-lg">
+      <p><strong>Estratègia amb sentit</strong></p>
+
+<p>Cada projecte arrenca amb preguntes. Escoltem, analitzem i tracem un pla que tingui peus, cap i resultats.</p>
+
+    </div>
+  </div>
+</div>
+      
+      
+
+<!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
+<div class="
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
+   
+    sm:grid-cols-[1fr_auto] 
+   
+  ">
+  <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
+  
+  <figure class=" sm:order-2  flex justify-center items-center mx-auto sm:mx-0 w-40">
+    <img
+      src="/assets/images/home/AdsIcon2.webp"
+      alt="Característica"
+      class="rounded-xl object-cover w-full h-auto" />
+  </figure>
+  
+
+  <!-- Card Body (Text Content) -->
+  <div class="card-body px-0  lg:order-1 pl-0  pt-0">
+    <div class="prose lg:prose-lg">
+      <p><strong>Publicitat que sap a qui parla</strong></p>
+
+<p>Ja sigui a xarxes o a Google, no llancem anuncis a l’aire. Segmentem, impactem i optimitzem. Som especialistes a trobar l’audiència adequada i fer que cada euro invertit rendeixi de debò.</p>
+
+    </div>
+  </div>
+</div>
+      
+      
+
+<!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
+<div class="
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
+   
+    sm:grid-cols-[auto_1fr] 
+   
+  ">
+  <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
+  
+  <figure class=" flex justify-center items-center mx-auto sm:mx-0 w-40">
+    <img
+      src="/assets/images/home/ChatbotIcon2.webp"
+      alt="Característica"
+      class="rounded-xl object-cover w-full h-auto" />
+  </figure>
+  
+
+  <!-- Card Body (Text Content) -->
+  <div class="card-body px-0  pr-0  pt-0">
+    <div class="prose lg:prose-lg">
+      <p><strong>Creem chatbots que no semblen robots</strong></p>
+
+<p>Converses naturals, to humà i objectius clars. Els nostres chatbots no només responen: qualifiquen, recopilen i converteixen.</p>
+
+    </div>
+  </div>
+</div>
+      
+      
+
+<!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
+<div class="
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
+   
+    sm:grid-cols-[1fr_auto] 
+   
+  ">
+  <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
+  
+  <figure class=" sm:order-2  flex justify-center items-center mx-auto sm:mx-0 w-40">
+    <img
+      src="/assets/images/home/IAIcon2.webp"
+      alt="Característica"
+      class="rounded-xl object-cover w-full h-auto" />
+  </figure>
+  
+
+  <!-- Card Body (Text Content) -->
+  <div class="card-body px-0  lg:order-1 pl-0  pt-0">
+    <div class="prose lg:prose-lg">
+      <p><strong>Intel·ligència artificial amb criteri humà</strong></p>
+
+<p>Fem servir IA per entendre el comportament de l’audiència, detectar patrons, millorar resultats i crear solucions personalitzades.</p>
+
+    </div>
+  </div>
+</div>
+      
+      
+
+<!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
+<div class="
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
+   
+    sm:grid-cols-[auto_1fr] 
+   
+  ">
+  <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
+  
+  <figure class=" flex justify-center items-center mx-auto sm:mx-0 w-40">
+    <img
+      src="/assets/images/home/AutomationIcon2.webp"
+      alt="Característica"
+      class="rounded-xl object-cover w-full h-auto" />
+  </figure>
+  
+
+  <!-- Card Body (Text Content) -->
+  <div class="card-body px-0  pr-0  pt-0">
+    <div class="prose lg:prose-lg">
+      <p><strong>Automatitzacions que alliberen temps</strong></p>
+
+<p>Automatitzem tasques repetitives perquè tu i el teu equip us pugueu centrar en el que realment importa. Tot flueix, però està sota control.</p>
+
+    </div>
+  </div>
+</div>
+      
+      
+
+<!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
+<div class="
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
+   
+    sm:grid-cols-[1fr_auto] 
+   
+  ">
+  <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
+  
+  <figure class=" sm:order-2  flex justify-center items-center mx-auto sm:mx-0 w-40">
+    <img
+      src="/assets/images/home/TeamIcon2.webp"
+      alt="Característica"
+      class="rounded-xl object-cover w-full h-auto" />
+  </figure>
+  
+
+  <!-- Card Body (Text Content) -->
+  <div class="card-body px-0  lg:order-1 pl-0  pt-0">
+    <div class="prose lg:prose-lg">
+      <p><strong>Un equip amb mil mirades</strong></p>
+
+<p>Copywriters, periodistes, guionistes, programadors, tècnics, creatius, analistes i estrategs. Aquesta barreja ens permet veure el teu projecte des de tots els angles i trobar la millor manera de fer-lo avançar.</p>
+
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="section bg-base-200">
+  <div class="container">
+    <!-- Section Header -->
+      <h2 class="section__header">
+        Els productes estrella de Persualia
+      </h2>
+      <h3 class="text-primary">
+        El millor que sabem fer (i el que millor sol funcionar)
+      </h3>            
+      
+      <div class="prose prose-lg !my-5">
+        <p>Aquestes són algunes de les solucions que més apliquem. Pensades per <strong>captar millor, automatitzar més i decidir amb dades.</strong></p>
+
+<p>Neixen de problemes reals dels nostres clients i estan pensades perquè el màrqueting no només soni bé, sinó que funcioni.</p>
+
+      </div>
+    
+      <!-- Products Grid -->  
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto max-w-xs sm:max-w-6xl md:max-w-2xl lg:max-w-6xl">
+        
+        
+        <!-- Componente para tarjetas de productos -->
+<div class="card bg-base-100 shadow-sm w-full">
+  
+  <figure class="w-full">
+    <img src="/assets/images/home/AdsIcon2.webp" 
+         alt="Paid Social & Ads" 
+         class="w-full h-52 object-cover rounded-t-xl" />
+  </figure>
+  
+  
+  <div class="card-body flex-grow">
+    <h3 class="card-title title-card mb-3">Paid Social & Ads</h3>
+    <div class="text-base-content/80 mb-4 prose prose-sm">
+      <p><strong>Arriba més lluny amb campanyes digitals que funcionen.</strong></p>
+
+<p>Gestionem anuncis a Facebook, Instagram, TikTok, LinkedIn i Google per a branding, vendes o leads. També configurem catàlegs a Google i Meta per vendre sense friccions.</p>
+
+    </div>
+    
+    
+  </div>
+</div>
+
+        
+        <!-- Componente para tarjetas de productos -->
+<div class="card bg-base-100 shadow-sm w-full">
+  
+  <figure class="w-full">
+    <img src="/assets/images/home/product-roitest2.webp" 
+         alt="ROI Test" 
+         class="w-full h-52 object-cover rounded-t-xl" />
+  </figure>
+  
+  
+  <div class="card-body flex-grow">
+    <h3 class="card-title title-card mb-3">ROI Test</h3>
+    <div class="text-base-content/80 mb-4 prose prose-sm">
+      <p><strong>Provem, afinem i maximitzem la teva inversió.</strong></p>
+
+<p>Analitzem les teves campanyes de venda anteriors i llancem una bateria de campanyes. En 3 mesos testem el resultat, en 12 consolidem el que funciona.</p>
+
+    </div>
+    
+    
+  </div>
+</div>
+
+        
+        <!-- Componente para tarjetas de productos -->
+<div class="card bg-base-100 shadow-sm w-full">
+  
+  <figure class="w-full">
+    <img src="/assets/images/home/product-promopost2.webp" 
+         alt="Sistema de promoció de posts" 
+         class="w-full h-52 object-cover rounded-t-xl" />
+  </figure>
+  
+  
+  <div class="card-body flex-grow">
+    <h3 class="card-title title-card mb-3">Sistema de promoció de posts</h3>
+    <div class="text-base-content/80 mb-4 prose prose-sm">
+      <p><strong>Més visibilitat per al teu contingut, sense esforç extra.</strong></p>
+
+<p>Sabies que només entre un 2% i un 10% dels teus seguidors veuen el que publiques? Les teves publicacions orgàniques es convertiran en campanyes de pagament automàtiques, sense que hagis de moure un dit.</p>
+
+    </div>
+    
+    
+    <div class="card-actions justify-end mt-auto">
+      <a href="/ca/productes/sistema-promocio-posts/" class="btn btn-primary btn-sm">
+        Vull saber més
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+        
+        <!-- Componente para tarjetas de productos -->
+<div class="card bg-base-100 shadow-sm w-full">
+  
+  <figure class="w-full">
+    <img src="/assets/images/home/product-analytics2.webp" 
+         alt="Analítica web clara (de debò)" 
+         class="w-full h-52 object-cover rounded-t-xl" />
+  </figure>
+  
+  
+  <div class="card-body flex-grow">
+    <h3 class="card-title title-card mb-3">Analítica web clara (de debò)</h3>
+    <div class="text-base-content/80 mb-4 prose prose-sm">
+      <p><strong>Ni palla, ni caos. Només les dades que importen.</strong></p>
+
+<p>Llegir dades a GA4 et resulta confús? Creem informes visuals i personalitzats perquè entenguis què passa al teu web sense perdre temps ni necessitar un analista.</p>
+
+    </div>
+    
+    
+    <div class="card-actions justify-end mt-auto">
+      <a href="/ca/productes/analitica-web-clara/" class="btn btn-primary btn-sm">
+        Vull saber més
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+        
+        <!-- Componente para tarjetas de productos -->
+<div class="card bg-base-100 shadow-sm w-full">
+  
+  <figure class="w-full">
+    <img src="/assets/images/home/product-custom2.webp" 
+         alt="No encaixes en cap? Millor." 
+         class="w-full h-52 object-cover rounded-t-xl" />
+  </figure>
+  
+  
+  <div class="card-body flex-grow">
+    <h3 class="card-title title-card mb-3">No encaixes en cap? Millor.</h3>
+    <div class="text-base-content/80 mb-4 prose prose-sm">
+      <p><strong>Se’ns dona bé escoltar, adaptar-nos i trobar el que realment necessites.</strong></p>
+
+<p>Si tens un repte de màrqueting digital, parlem. Si no tens clar què necessites, també. Adaptem cada solució a cada cas.</p>
+
+    </div>
+    
+    
+  </div>
+</div>
+
+        
+      </div>
+  </div>
+</section>
+
+<!-- Client Carousel Section -->
+<section class="py-16 lg:py-24">
+  <div class="mx-auto px-4">
+    <!-- Section Header -->    
+    <h2 class="text-center">
+      Han confiat en Persualia
+    </h2>
+    
+    
+    <!-- Carousel Component -->
+    <!-- Carrusel de logos de clientes (sin saltos) -->
+<div class="overflow-hidden carrusel-logos" data-duration="60" aria-label="Logos de clientes, desplazamiento continuo" role="region">
+  <div class="flex animate-scroll space-x-8 w-max" style="will-change: transform;">
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/accion-contra-el-hambre.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/acnur.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/aldeas-infantiles.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/Amnistia-Internacional.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/Andreu.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/Blue-Planet.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/Calbet.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/Caritas.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/Clinic.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/Dalmau.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/finques-feliu.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/fundacio_carreras.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/fpm.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/gff.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/greenpeace.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/goes-group.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/gotta.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/iebs.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/irb.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/Lindt.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/manubens.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/medicos-sin-fronteras.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/MNAC.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/monapart.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/omnium.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/oxfam.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/palau.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/SJD.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+    <div class="flex-shrink-0">
+      <img src="/assets/images/clients/vall-dhebron.webp"
+           alt="Cliente"
+           decoding="async" loading="eager"
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    </div>
+    
+  </div>
+
+  <style>
+    /*
+      Estilos locales y no intrusivos (scoping por .carrusel-logos)
+      - Mantiene tus clases Tailwind
+      - Sin saltos: animación hasta el ancho de un set clonado
+    */
+    .carrusel-logos {
+      --logos-duration: 30s;
+      --logos-translate: -50%;
+    }
+
+    /* Permite suavizar la entrada/salida en bordes si se desea (comentado): */
+    /* .carrusel-logos { mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent); -webkit-mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent); } */
+
+    .carrusel-logos .animate-scroll {
+      animation: carrusel-scroll var(--logos-duration) linear infinite;
+    }
+    .carrusel-logos:hover .animate-scroll { animation-play-state: paused; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .carrusel-logos .animate-scroll { animation: none; }
+    }
+
+    /* Clave: animamos solo lo que mide un set (definido en --logos-translate) */
+    @keyframes carrusel-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(var(--logos-translate)); }
+    }
+  </style>
+
+  <script>
+    (function initScopedCarousel(root){
+      try {
+        root = root || document.currentScript.closest('.carrusel-logos');
+        if (!root) return;
+        const scroller = root; // contenedor con overflow-hidden
+        const track = root.querySelector('.animate-scroll');
+        if (!track) return;
+        const originals = Array.from(track.children);
+        if (!originals.length) return;
+
+        // Duración desde data-atributo (si existe)
+        const custom = root.getAttribute('data-duration');
+        if (custom) track.style.setProperty('--logos-duration', custom + 's');
+
+        // 1) Clonar hijos originales para obtener [A][A]
+        originals.forEach(n => track.appendChild(n.cloneNode(true)));
+
+        // 2) Asegurar ancho suficiente (evita huecos en pantallas muy anchas)
+        function ensureWidth(){
+          const minWidth = scroller.clientWidth * 1.5; // margen de seguridad
+          while (track.scrollWidth < minWidth) {
+            for (const node of originals) track.appendChild(node.cloneNode(true));
+          }
+        }
+        ensureWidth();
+
+        function measureCycleWidth() {
+          return originals.reduce((total, node) => {
+            const rect = node.getBoundingClientRect();
+            const styles = window.getComputedStyle(node);
+            const marginLeft = parseFloat(styles.marginLeft) || 0;
+            const marginRight = parseFloat(styles.marginRight) || 0;
+            return total + rect.width + marginLeft + marginRight;
+          }, 0);
+        }
+
+        function updateTranslateDistance() {
+          const cycleWidth = measureCycleWidth();
+          if (cycleWidth > 0) {
+            track.style.setProperty('--logos-translate', `-${cycleWidth}px`);
+          }
+        }
+        updateTranslateDistance();
+
+        // 3) Recalcular en resize
+        if ('ResizeObserver' in window) {
+          const ro = new ResizeObserver(() => {
+            ensureWidth();
+            updateTranslateDistance();
+          });
+          ro.observe(scroller);
+          ro.observe(track);
+        } else {
+          const refreshFallback = () => {
+            ensureWidth();
+            updateTranslateDistance();
+          };
+          window.addEventListener('resize', refreshFallback);
+          window.addEventListener('load', refreshFallback);
+        }
+      } catch (e) {
+        console.error('Carrusel logos init error:', e);
+      }
+    })();
+  </script>
+</div>
+
+  </div>
+</section>
+
+<!-- CTA Section - DaisyUI 5 Pure -->
+<section class="bg-primary text-primary-content py-8">
+  <div class="mx-auto text-center max-w-2xl px-4">
+    <h2>En parlem?</h2>
+    <p>
+      Si tens un repte de màrqueting digital, estem aquí per ajudar-te a resoldre'l.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:mail@persualia.com" class="btn btn-neutral btn-lg">Contactar</a>
+    </div>
+  </div>
+</section>
+
+    </main>
+    
+    <footer class="bg-base-300 text-base-content">
+  <div class="mx-auto max-w-7xl px-4 py-8">
+    <!-- Footer centrado: dos líneas en xs, una línea en sm+ -->
+    <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-center sm:gap-8">      
+
+      <!-- Redes sociales -->
+      <div class="flex items-center gap-3">                                
+        <img src="/assets/images/svg/persualia-logo.svg" alt="Logo" class="h-7 mx-auto rounded" />
+        <p class="text-sm text-base-content/70 mb-0">
+          Sant Joan de La Salle, 42 | 08022 Barcelona
+        </p>        
+        <a href="https://www.linkedin.com/company/persualia" class="btn btn-ghost hover:bg-transparent border-0 btn-circle h-7 mx-aut" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin fa-2x" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+        </a>
+      </div>      
+    </div>
+  </div>
+</footer>
+    
+    <!-- Theme Controller Script -->
+    <!-- <script>
+      // Theme switching functionality with persualia as default
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+      }
+      
+      // Initialize theme from localStorage, defaulting to persualia
+      // Force persualia theme temporarily
+      const savedTheme = 'persualia';
+      setTheme(savedTheme);
+      
+      // persualia theme presets
+      function applypersualiaPreset(preset) {
+        const html = document.documentElement;
+        // Remove existing presets
+        html.classList.remove('preset-arctic', 'preset-ice-purple', 'preset-pine', 'preset-storm');
+        // Apply new preset
+        if (preset !== 'default') {
+          html.classList.add(`preset-${preset}`);
+        }
+        localStorage.setItem('persualia-preset', preset);
+      }
+      
+      // Initialize persualia preset
+      const savedPreset = localStorage.getItem('persualia-preset') || 'default';
+      if (savedPreset !== 'default') {
+        applypersualiaPreset(savedPreset);
+      }
+    </script> -->
+    
+    <!-- React Components -->
+    <!-- React Components -->
+<script type="text/babel">
+  // Theme Switcher Component
+  const ThemeSwitcher = () => {
+    const [currentTheme, setCurrentTheme] = React.useState('persualia');
+    
+    const themes = [
+      { name: 'persualia', label: 'Persualia' },
+      { name: 'light', label: 'Claro' },
+      { name: 'dark', label: 'Oscuro' },
+      { name: 'cupcake', label: 'Cupcake' },
+      { name: 'corporate', label: 'Corporativo' },
+      { name: 'synthwave', label: 'Synthwave' },
+      { name: 'cyberpunk', label: 'Cyberpunk' }
+    ];
+    
+    React.useEffect(() => {
+      const savedTheme = localStorage.getItem('theme') || 'persualia';
+      setCurrentTheme(savedTheme);
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }, []);
+    
+    const handleThemeChange = (theme) => {
+      setCurrentTheme(theme);
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    };
+    
+    return (
+      <div className="dropdown dropdown-end">
+        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+        </div>
+        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+          {themes.map((theme) => (
+            <li key={theme.name}>
+              <a 
+                onClick={() => handleThemeChange(theme.name)}
+                className={currentTheme === theme.name ? 'active' : ''}
+              >
+                {theme.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+  
+  // Hero Component
+  const HeroSection = ({ title, subtitle, buttonText, buttonLink }) => {
+    return (
+      <div className="hero min-h-screen bg-gradient-to-br from-base-100 to-base-200">
+        <div className="hero-content text-center">
+          <div className="max-w-md">
+            <h1 className="text-5xl font-bold text-gradient">{title}</h1>
+            <p className="py-6 text-lg">{subtitle}</p>
+            <a href={buttonLink} className="btn-persualia btn-lg">
+              {buttonText}
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
+  // Card Component
+  const FeatureCard = ({ icon, title, description }) => {
+    return (
+      <div className="card-persualia">
+        <div className="card-body items-center text-center">
+          <div className="text-4xl mb-4">{icon}</div>
+          <h2 className="card-title text-2xl mb-2">{title}</h2>
+          <p className="text-base-content/70">{description}</p>
+        </div>
+      </div>
+    );
+  };
+  
+  // Contact Form Component
+  const ContactForm = () => {
+    const [formData, setFormData] = React.useState({
+      name: '',
+      email: '',
+      message: ''
+    });
+    
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log('Form submitted:', formData);
+      // Aquí puedes agregar la lógica para enviar el formulario
+    };
+    
+    const handleChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+      });
+    };
+    
+    return (
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Nombre</span>
+          </label>
+          <input 
+            type="text" 
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Tu nombre" 
+            className="input input-bordered w-full" 
+            required 
+          />
+        </div>
+        
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Email</span>
+          </label>
+          <input 
+            type="email" 
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="tu@email.com" 
+            className="input input-bordered w-full" 
+            required 
+          />
+        </div>
+        
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Mensaje</span>
+          </label>
+          <textarea 
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="textarea textarea-bordered h-24" 
+            placeholder="Tu mensaje..."
+            required
+          ></textarea>
+        </div>
+        
+        <div className="form-control">
+          <button type="submit" className="btn-persualia w-full">
+            Enviar Mensaje
+          </button>
+        </div>
+      </form>
+    );
+  };
+  
+  // Render components
+  document.addEventListener('DOMContentLoaded', function() {
+    // Theme Switcher
+    const themeSwitcherContainer = document.getElementById('theme-switcher');
+    if (themeSwitcherContainer) {
+      ReactDOM.render(<ThemeSwitcher />, themeSwitcherContainer);
+    }
+    
+    // Hero Section
+    const heroContainer = document.getElementById('hero-section');
+    if (heroContainer) {
+      const title = heroContainer.getAttribute('data-title') || 'Bienvenido a Persualia';
+      const subtitle = heroContainer.getAttribute('data-subtitle') || 'Una experiencia web moderna y elegante';
+      const buttonText = heroContainer.getAttribute('data-button-text') || 'Comenzar';
+      const buttonLink = heroContainer.getAttribute('data-button-link') || '#';
+      
+      ReactDOM.render(
+        <HeroSection 
+          title={title}
+          subtitle={subtitle}
+          buttonText={buttonText}
+          buttonLink={buttonLink}
+        />, 
+        heroContainer
+      );
+    }
+    
+    // Feature Cards
+    document.querySelectorAll('.feature-card').forEach(container => {
+      const icon = container.getAttribute('data-icon') || '🚀';
+      const title = container.getAttribute('data-title') || 'Característica';
+      const description = container.getAttribute('data-description') || 'Descripción de la característica';
+      
+      ReactDOM.render(
+        <FeatureCard 
+          icon={icon}
+          title={title}
+          description={description}
+        />, 
+        container
+      );
+    });
+    
+    // Contact Form
+    const contactFormContainer = document.getElementById('contact-form');
+    if (contactFormContainer) {
+      ReactDOM.render(<ContactForm />, contactFormContainer);
+    }
+  });
+</script>
+
+    
+    <!-- Language Selector JavaScript -->
+    <script src="/assets/js/language-selector.js"></script>
+  </body>
+</html>
