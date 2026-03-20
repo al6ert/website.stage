@@ -162,7 +162,7 @@
   <div class="navbar-start gap-2">
     <!-- Mobile Dropdown Menu - Moved to the left, before logo -->
     <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Abrir menú móvil">
+      <div tabindex="0" role="button" class="btn btn-ghost md:hidden" aria-label="Abrir menú móvil">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
         </svg>
@@ -214,14 +214,32 @@
     </div>
     
     <!-- Logo with text - text only visible from md breakpoint -->
-    <a href="/website.stage/" class="btn btn-ghost text-primary text-xl p-0 hover:bg-transparent hover:scale-100 active:scale-100 border-0 focus:outline-none">
+    <a href="/website.stage/" class="btn btn-ghost text-primary text-xl pl-0 hover:bg-transparent hover:scale-100 active:scale-100 border-0 focus:outline-none">
       <img src="/website.stage/assets/images/svg/persualia-logo.svg" alt="Persualia Logo" class="h-10 w-10 rounded">
-      <span class="hidden md:inline" data-i18n-key="brand.title" data-i18n-scope="header">
+      <span class="" data-i18n-key="brand.title" data-i18n-scope="header">
         Persualia
       </span>
     </a>
 
-    <div class="hidden md:block">
+    
+  </div>
+
+  <!--div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 m-0">
+      <li><a href="/website.stage/" data-i18n-key="navigation.home" data-i18n-scope="header">Inicio</a></li>
+      <li><a href="/website.stage/about/" data-i18n-key="navigation.about" data-i18n-scope="header">Acerca de</a></li>
+      <li><a href="/website.stage/blog/" data-i18n-key="navigation.blog" data-i18n-scope="header">Blog</a></li>
+      <li><a href="/website.stage/contact/" data-i18n-key="navigation.contact" data-i18n-scope="header">Contacto</a></li>
+      <li><a href="/website.stage/persualia-demo/" data-i18n-key="navigation.persualia_demo" data-i18n-scope="header">Demo persualia</a></li>
+      <li><a href="/website.stage/persualia-guide/" data-i18n-key="navigation.persualia_guide" data-i18n-scope="header">Guía persualia</a></li>
+    </ul>
+  </div-->
+  
+  <div class="navbar-end ">
+    
+    
+
+    <div class="hidden md:flex items-center">
       
 
 
@@ -267,35 +285,15 @@
   </ul>
 </div>
 
+      
+      <a href='/website.stage/blog/' class="btn btn-ghost">
+        <span class="text-sm font-medium" data-i18n-key="navigation.blog" data-i18n-scope="header">Blog</span>
+      </a>
     </div>
-  </div>
-  
-  <!--div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1 m-0">
-      <li><a href="/website.stage/" data-i18n-key="navigation.home" data-i18n-scope="header">Inicio</a></li>
-      <li><a href="/website.stage/about/" data-i18n-key="navigation.about" data-i18n-scope="header">Acerca de</a></li>
-      <li><a href="/website.stage/blog/" data-i18n-key="navigation.blog" data-i18n-scope="header">Blog</a></li>
-      <li><a href="/website.stage/contact/" data-i18n-key="navigation.contact" data-i18n-scope="header">Contacto</a></li>
-      <li><a href="/website.stage/persualia-demo/" data-i18n-key="navigation.persualia_demo" data-i18n-scope="header">Demo persualia</a></li>
-      <li><a href="/website.stage/persualia-guide/" data-i18n-key="navigation.persualia_guide" data-i18n-scope="header">Guía persualia</a></li>
-    </ul>
-  </div-->
-  
-  <div class="navbar-end gap-2">
     
-    
-    
-    <!-- Blog Button - Hidden when dropdown is visible (below lg) -->
-    <a href='/website.stage/blog/' class="btn btn-outline btn-primary mr-2 hidden lg:flex" data-i18n-key="navigation.blog" data-i18n-scope="header">
-      Blog
-    </a>
-    
-    <!-- Contact Button with Email Icon - Text hidden below md -->
-    <a href="mailto:mail@persualia.com" class="btn btn-primary">
+    <!-- Contact Button with Email Icon -->
+    <a href="mailto:mail@persualia.com" class="btn btn-ghost">
       <span class="material-symbols-outlined text-2xl">mail</span>
-      <span class="hidden md:inline" data-i18n-key="navigation.contact_button" data-i18n-scope="header">
-        Contactar
-      </span>
     </a>
 
     <!-- Language Selector -->
