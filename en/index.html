@@ -57,10 +57,16 @@
     
     
     <link rel="stylesheet" href="/website.stage/assets/css/style.css">
+    <link rel="stylesheet" href="/website.stage/assets/css/animations.css">
     <!--link rel="stylesheet" href="/website.stage/assets/css/typography.css"-->
     <link rel="stylesheet" href="/website.stage/assets/css/fa.css">
     <link rel="stylesheet" href="/website.stage/assets/css/material-icons.css">
     
+    <!-- GPU detection — adds .no-gpu to <html> before first paint -->
+    <script>
+      (function(){try{var c=document.createElement('canvas'),g=c.getContext('webgl')||c.getContext('experimental-webgl');if(!g){document.documentElement.classList.add('no-gpu');return}var d=g.getExtension('WEBGL_debug_renderer_info'),r=d?g.getParameter(d.UNMASKED_RENDERER_WEBGL):'';if(/swiftshader|llvmpipe|mesa|microsoft basic/i.test(r))document.documentElement.classList.add('no-gpu')}catch(e){document.documentElement.classList.add('no-gpu')}})();
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/website.stage/assets/images/svg/persualia-logo.svg">
 
@@ -275,7 +281,7 @@
 </script>
 
 <!-- Hero Section - DaisyUI 5 Pure with Gradient Background -->
-<div class="hero">
+<div class="hero animate-hero">
   <div class="hero-content container">
     <!-- Contenido Hero -->
     <div class="text-center md:text-left ">
@@ -338,7 +344,7 @@
 <section class="section">
   <div class="container">
     <!-- Section Header -->
-    <h1 class="section__header">
+    <h1 class="section__header" data-reveal>
       The Persualia Conversion System
     </h1>
     
@@ -352,24 +358,25 @@
 
 <!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
 <div class="
-  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
-   
-    sm:grid-cols-[auto_1fr] 
-   
+  group
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8
+  
+    sm:grid-cols-[auto_1fr] row-even
+  
   ">
   <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
   
-  <figure class=" flex justify-center items-center mx-auto sm:mx-0 w-40">
-    <img
-      src="/website.stage/assets/images/home/StrategyIcon2.webp"
-      alt="Característica"
-      class="rounded-xl object-cover w-full h-auto" />
+  <figure class="rounded-xl overflow-hidden bg-accent  flex justify-center items-center mx-auto sm:mx-0 w-40 h-40 shrink-0">
+      <img
+        src="/website.stage/assets/images/home/StrategyIcon2.webp"
+        alt="Característica"
+        class="object-cover w-full h-full group-hover:animate-pulse-soft" />
   </figure>
   
 
   <!-- Card Body (Text Content) -->
   <div class="card-body px-0  pr-0  pt-4 sm:pt-0">
-    <div class="prose lg:prose-lg">
+    <div class="prose lg:prose-lg  group-hover:[&>p>strong]:text-accent  transition-colors duration-300">
       <p><strong>Evidence-based strategy</strong></p>
 
 <p>Deployment of marketing plans where every decision is grounded in data analysis and historical performance. No assumptions, only hypothesis validation.</p>
@@ -377,29 +384,31 @@
     </div>
   </div>
 </div>
+
       
       
 
 <!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
 <div class="
-  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
-   
-    sm:grid-cols-[1fr_auto] 
-   
+  group
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8
+  
+    sm:grid-cols-[1fr_auto] row-odd
+  
   ">
   <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
   
-  <figure class=" sm:order-2  flex justify-center items-center mx-auto sm:mx-0 w-40">
-    <img
-      src="/website.stage/assets/images/home/AdsIcon2.webp"
-      alt="Característica"
-      class="rounded-xl object-cover w-full h-auto" />
+  <figure class="rounded-xl overflow-hidden bg-accent  bg-primary sm:order-2  flex justify-center items-center mx-auto sm:mx-0 w-40 h-40 shrink-0">
+      <img
+        src="/website.stage/assets/images/home/AdsIcon2.webp"
+        alt="Característica"
+        class="object-cover w-full h-full group-hover:animate-pulse-soft" />
   </figure>
   
 
   <!-- Card Body (Text Content) -->
   <div class="card-body px-0  lg:order-1 pl-0  pt-4 sm:pt-0">
-    <div class="prose lg:prose-lg">
+    <div class="prose lg:prose-lg  group-hover:[&>p>strong]:text-primary  transition-colors duration-300">
       <p><strong>Advertising that knows who it is talking to</strong></p>
 
 <p>Segmentation, impact, and optimization across Google, Meta, and LinkedIn that do more than buy traffic: they start conversations, qualify, and prioritize profiles with the highest likelihood of conversion.</p>
@@ -407,29 +416,31 @@
     </div>
   </div>
 </div>
+
       
       
 
 <!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
 <div class="
-  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
-   
-    sm:grid-cols-[auto_1fr] 
-   
+  group
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8
+  
+    sm:grid-cols-[auto_1fr] row-even
+  
   ">
   <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
   
-  <figure class=" flex justify-center items-center mx-auto sm:mx-0 w-40">
-    <img
-      src="/website.stage/assets/images/home/ChatbotIcon2.webp"
-      alt="Característica"
-      class="rounded-xl object-cover w-full h-auto" />
+  <figure class="rounded-xl overflow-hidden bg-accent  flex justify-center items-center mx-auto sm:mx-0 w-40 h-40 shrink-0">
+      <img
+        src="/website.stage/assets/images/home/ChatbotIcon2.webp"
+        alt="Característica"
+        class="object-cover w-full h-full group-hover:animate-pulse-soft" />
   </figure>
   
 
   <!-- Card Body (Text Content) -->
   <div class="card-body px-0  pr-0  pt-4 sm:pt-0">
-    <div class="prose lg:prose-lg">
+    <div class="prose lg:prose-lg  group-hover:[&>p>strong]:text-accent  transition-colors duration-300">
       <p><strong>Conversion-focused chatbots</strong></p>
 
 <p>Flows in Typebot, Landbot, and WhatsApp Business API that capture attention, guide the narrative, and extract structured data. They qualify leads and monitor high-granularity events, detecting behaviors and friction points invisible to conventional advertising.</p>
@@ -437,29 +448,31 @@
     </div>
   </div>
 </div>
+
       
       
 
 <!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
 <div class="
-  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
-   
-    sm:grid-cols-[1fr_auto] 
-   
+  group
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8
+  
+    sm:grid-cols-[1fr_auto] row-odd
+  
   ">
   <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
   
-  <figure class=" sm:order-2  flex justify-center items-center mx-auto sm:mx-0 w-40">
-    <img
-      src="/website.stage/assets/images/home/IAIcon2.webp"
-      alt="Característica"
-      class="rounded-xl object-cover w-full h-auto" />
+  <figure class="rounded-xl overflow-hidden bg-accent  bg-primary sm:order-2  flex justify-center items-center mx-auto sm:mx-0 w-40 h-40 shrink-0">
+      <img
+        src="/website.stage/assets/images/home/IAIcon2.webp"
+        alt="Característica"
+        class="object-cover w-full h-full group-hover:animate-pulse-soft" />
   </figure>
   
 
   <!-- Card Body (Text Content) -->
   <div class="card-body px-0  lg:order-1 pl-0  pt-4 sm:pt-0">
-    <div class="prose lg:prose-lg">
+    <div class="prose lg:prose-lg  group-hover:[&>p>strong]:text-primary  transition-colors duration-300">
       <p><strong>Applied AI, not decorative AI</strong></p>
 
 <p>It’s not about relying only on Meta’s or Google’s native AI. We also apply it for predictive analysis, process optimization, and dynamic generation of creative assets that improve real performance and user experience.</p>
@@ -467,29 +480,31 @@
     </div>
   </div>
 </div>
+
       
       
 
 <!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
 <div class="
-  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
-   
-    sm:grid-cols-[auto_1fr] 
-   
+  group
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8
+  
+    sm:grid-cols-[auto_1fr] row-even
+  
   ">
   <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
   
-  <figure class=" flex justify-center items-center mx-auto sm:mx-0 w-40">
-    <img
-      src="/website.stage/assets/images/home/AutomationIcon2.webp"
-      alt="Característica"
-      class="rounded-xl object-cover w-full h-auto" />
+  <figure class="rounded-xl overflow-hidden bg-accent  flex justify-center items-center mx-auto sm:mx-0 w-40 h-40 shrink-0">
+      <img
+        src="/website.stage/assets/images/home/AutomationIcon2.webp"
+        alt="Característica"
+        class="object-cover w-full h-full group-hover:animate-pulse-soft" />
   </figure>
   
 
   <!-- Card Body (Text Content) -->
   <div class="card-body px-0  pr-0  pt-4 sm:pt-0">
-    <div class="prose lg:prose-lg">
+    <div class="prose lg:prose-lg  group-hover:[&>p>strong]:text-accent  transition-colors duration-300">
       <p><strong>Automations that remove operational friction</strong></p>
 
 <p>Automation of repetitive tasks so you and your team can focus on higher-value strategic work.</p>
@@ -497,29 +512,31 @@
     </div>
   </div>
 </div>
+
       
       
 
 <!-- Feature Row using DaisyUI 5 Card Side Component - Clean Version -->
 <div class="
-  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 
-   
-    sm:grid-cols-[1fr_auto] 
-   
+  group
+  grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8
+  
+    sm:grid-cols-[1fr_auto] row-odd
+  
   ">
   <!-- Figure (Image) - Par=Izquierda, Impar=Derecha -->
   
-  <figure class=" sm:order-2  flex justify-center items-center mx-auto sm:mx-0 w-40">
-    <img
-      src="/website.stage/assets/images/home/TeamIcon2.webp"
-      alt="Característica"
-      class="rounded-xl object-cover w-full h-auto" />
+  <figure class="rounded-xl overflow-hidden bg-accent  bg-primary sm:order-2  flex justify-center items-center mx-auto sm:mx-0 w-40 h-40 shrink-0">
+      <img
+        src="/website.stage/assets/images/home/TeamIcon2.webp"
+        alt="Característica"
+        class="object-cover w-full h-full group-hover:animate-pulse-soft" />
   </figure>
   
 
   <!-- Card Body (Text Content) -->
   <div class="card-body px-0  lg:order-1 pl-0  pt-4 sm:pt-0">
-    <div class="prose lg:prose-lg">
+    <div class="prose lg:prose-lg  group-hover:[&>p>strong]:text-primary  transition-colors duration-300">
       <p><strong>Projects executed by specialists, not generalists</strong></p>
 
 <p>Copywriters for response marketing, digital architecture developers, data analysts, high-impact creatives, and funnel strategists. The Persualia Evidence System is run by specialists who master every conversion angle: from code to words.</p>
@@ -527,6 +544,7 @@
     </div>
   </div>
 </div>
+
       
     </div>
   </div>
@@ -558,13 +576,20 @@
         
         <!-- Componente para tarjetas de productos -->
 <div class="card bg-base-100 shadow-sm w-full">
-  
-  <figure class="w-full">
-    <img src="/website.stage/assets/images/home/AdsIcon2.webp" 
-         alt="LeadFlow System" 
-         class="w-full h-72 object-contain rounded-t-xl" />
+  <figure class="w-full" style="padding-top: 1.5rem;">
+    
+    <canvas
+      class="w-full h-auto block rounded-xl"
+      data-sequence="leadflow"
+      data-frame-count="50">
+    </canvas>
+    
+    
+    <img src="/website.stage/assets/images/home/AdsIcon2.webp"
+         alt="LeadFlow System"
+         class="w-full h-72 object-contain rounded-t-xl product-fallback-img" />
+    
   </figure>
-  
   
   <div class="card-body flex-grow">
     <h3 class="card-title title-card mb-3">LeadFlow System</h3>
@@ -590,13 +615,20 @@
         
         <!-- Componente para tarjetas de productos -->
 <div class="card bg-base-100 shadow-sm w-full">
-  
-  <figure class="w-full">
-    <img src="/website.stage/assets/images/home/roi-test.webp" 
-         alt="ROI Test" 
-         class="w-full h-72 object-contain rounded-t-xl" />
+  <figure class="w-full" style="padding-top: 1.5rem;">
+    
+    <canvas
+      class="w-full h-auto block rounded-xl"
+      data-sequence="roi-test"
+      data-frame-count="50">
+    </canvas>
+    
+    
+    <img src="/website.stage/assets/images/home/roi-test.webp"
+         alt="ROI Test"
+         class="w-full h-72 object-contain rounded-t-xl product-fallback-img" />
+    
   </figure>
-  
   
   <div class="card-body flex-grow">
     <h3 class="card-title title-card mb-3">ROI Test</h3>
@@ -622,13 +654,20 @@
         
         <!-- Componente para tarjetas de productos -->
 <div class="card bg-base-100 shadow-sm w-full">
-  
-  <figure class="w-full">
-    <img src="/website.stage/assets/images/home/product-promopost2.webp" 
-         alt="Post Promotion System" 
-         class="w-full h-72 object-contain rounded-t-xl" />
+  <figure class="w-full" style="padding-top: 1.5rem;">
+    
+    <canvas
+      class="w-full h-auto block rounded-xl"
+      data-sequence="promopost"
+      data-frame-count="50">
+    </canvas>
+    
+    
+    <img src="/website.stage/assets/images/home/product-promopost2.webp"
+         alt="Post Promotion System"
+         class="w-full h-72 object-contain rounded-t-xl product-fallback-img" />
+    
   </figure>
-  
   
   <div class="card-body flex-grow">
     <h3 class="card-title title-card mb-3">Post Promotion System</h3>
@@ -654,13 +693,20 @@
         
         <!-- Componente para tarjetas de productos -->
 <div class="card bg-base-100 shadow-sm w-full">
-  
-  <figure class="w-full">
-    <img src="/website.stage/assets/images/home/product-analytics2.webp" 
-         alt="Web Analytics" 
-         class="w-full h-72 object-contain rounded-t-xl" />
+  <figure class="w-full" style="padding-top: 1.5rem;">
+    
+    <canvas
+      class="w-full h-auto block rounded-xl"
+      data-sequence="analytics"
+      data-frame-count="50">
+    </canvas>
+    
+    
+    <img src="/website.stage/assets/images/home/product-analytics2.webp"
+         alt="Web Analytics"
+         class="w-full h-72 object-contain rounded-t-xl product-fallback-img" />
+    
   </figure>
-  
   
   <div class="card-body flex-grow">
     <h3 class="card-title title-card mb-3">Web Analytics</h3>
@@ -686,13 +732,20 @@
         
         <!-- Componente para tarjetas de productos -->
 <div class="card bg-base-100 shadow-sm w-full">
-  
-  <figure class="w-full">
-    <img src="/website.stage/assets/images/home/product-custom2.webp" 
-         alt="Custom Conversion Architecture" 
-         class="w-full h-72 object-contain rounded-t-xl" />
+  <figure class="w-full" style="padding-top: 1.5rem;">
+    
+    <canvas
+      class="w-full h-auto block rounded-xl"
+      data-sequence="custom"
+      data-frame-count="50">
+    </canvas>
+    
+    
+    <img src="/website.stage/assets/images/home/product-custom2.webp"
+         alt="Custom Conversion Architecture"
+         class="w-full h-72 object-contain rounded-t-xl product-fallback-img" />
+    
   </figure>
-  
   
   <div class="card-body flex-grow">
     <h3 class="card-title title-card mb-3">Custom Conversion Architecture</h3>
@@ -724,7 +777,7 @@
 <section class="py-16 lg:py-24">
   <div class="mx-auto px-4">
     <!-- Section Header -->    
-    <h2 class="text-center">
+    <h2 class="text-center" data-reveal>
       Proven track record
     </h2>
     <!--
@@ -742,203 +795,203 @@
       <img src="/website.stage/assets/images/clients/accion-contra-el-hambre.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/acnur.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/aldeas-infantiles.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/Amnistia-Internacional.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/Andreu.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/Blue-Planet.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/Calbet.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/Caritas.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/Clinic.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/Dalmau.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/finques-feliu.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/fundacio_carreras.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/fpm.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/gff.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/greenpeace.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/goes-group.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/gotta.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/iebs.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/irb.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/Lindt.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/manubens.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/medicos-sin-fronteras.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/MNAC.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/monapart.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/omnium.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/oxfam.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/palau.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/SJD.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
     <div class="flex-shrink-0">
       <img src="/website.stage/assets/images/clients/vall-dhebron.webp"
            alt="Cliente"
            decoding="async" loading="eager"
-           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+           class="h-28 w-auto object-contain grayscale hover:grayscale-0 transition-[filter] duration-300" />
     </div>
     
   </div>
@@ -968,8 +1021,8 @@
 
     /* Clave: animamos solo lo que mide un set (definido en --logos-translate) */
     @keyframes carrusel-scroll {
-      from { transform: translateX(0); }
-      to   { transform: translateX(var(--logos-translate)); }
+      from { transform: translate3d(0, 0, 0); }
+      to   { transform: translate3d(var(--logos-translate), 0, 0); }
     }
   </style>
 
@@ -1025,7 +1078,6 @@
             updateTranslateDistance();
           });
           ro.observe(scroller);
-          ro.observe(track);
         } else {
           const refreshFallback = () => {
             ensureWidth();
@@ -1045,7 +1097,7 @@
 </section>
 
 <!-- CTA Section - DaisyUI 5 Pure -->
-<section class="bg-primary text-primary-content py-8">
+<section class="bg-primary text-primary-content py-8" data-reveal>
   <div class="mx-auto text-center max-w-2xl px-4">
     <h2>Shall we talk?</h2>
     <p>
@@ -1322,5 +1374,11 @@
     
     <!-- Language Selector JavaScript -->
     <script src="/website.stage/assets/js/language-selector.js"></script>
+
+    <!-- GSAP + ScrollTrigger + Animations -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+    <script src="/website.stage/en/assets/js/scroll-reveals.js" defer></script>
+    <script src="/website.stage/en/assets/js/product-sequence.js" defer></script>
   </body>
 </html>
