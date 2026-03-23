@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const promises = Array.from({ length: frameCount }, (_, i) => {
       return new Promise(resolve => {
         const img = new Image();
-        img.src = `/assets/images/home/frames/${key}/frame_${pad(i + 1)}.webp`;
+        img.src = `${window.__baseurl || ''}/assets/images/home/frames/${key}/frame_${pad(i + 1)}.webp`;
         img.onload  = () => { frames[i] = img; resolve(); };
         img.onerror = resolve;
       });
