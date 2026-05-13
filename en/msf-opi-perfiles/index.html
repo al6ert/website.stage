@@ -334,6 +334,10 @@
     gap: 1.75rem;
   }
 
+  .msf-form[hidden] {
+    display: none;
+  }
+
   .msf-step {
     display: flex;
     flex-direction: column;
@@ -461,9 +465,8 @@
         <p class="section-subtitle max-w-xl">
            Descubre con este juego qué papel tendrías en nuestro equipo.
         </p>
-        <div class="card bg-base-100 shadow-sm">
-          <div class="card-body text-sm">
-            <h2 class="card-title mt-0">Respuestas rápidas</h2>
+        <div class="">
+          <div class="text-sm">            
             <p class="">
               Solo tienes que responder unas preguntas rápidas… verás qué fácil.
             </p>
@@ -695,7 +698,7 @@
 
                 <label class="msf-question">
                   <span class="msf-question-title">Teléfono <span class="msf-required">*</span></span>
-                  <input class="input input-bordered w-full" id="field-2" name="field-2" type="tel" autocomplete="tel" placeholder="+34" required="" />
+                  <input class="input input-bordered w-full" id="field-2" name="field-2" type="tel" autocomplete="tel" inputmode="tel" placeholder="+34" value="+34" pattern="\+34[0-9]{9}" title="Introduce un teléfono español con +34 y 9 dígitos" required="" />
                 </label>
               </div>
 
@@ -724,7 +727,7 @@
             <div class="rounded-box bg-error/10 p-4 text-sm text-error hidden" id="msf-opi-error" role="alert"></div>
           </form>
 
-          <div class="hidden text-center" id="msf-opi-success" role="status">
+          <div class="text-center" id="msf-opi-success" role="status" hidden="">
             <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-success/20 text-success">
               <i class="fa-solid fa-circle-check text-3xl" aria-hidden="true"></i>
             </div>
@@ -799,11 +802,50 @@
       spinner.classList.toggle("hidden", !isSubmitting);
     }
 
+    function normalizeSpanishPhone(value) {
+      var phone = value.trim().replace(/\s+/g, "");
+
+      if (!phone) {
+        return "";
+      }
+
+      if (phone.indexOf("0034") === 0) {
+        return "+34" + phone.slice(4);
+      }
+
+      if (phone.indexOf("+34") === 0) {
+        return phone;
+      }
+
+      if (phone.indexOf("34") === 0) {
+        return "+" + phone;
+      }
+
+      return "+34" + phone;
+    }
+
+    function preparePhoneField() {
+      var field = document.getElementById("field-2");
+
+      if (field) {
+        field.value = normalizeSpanishPhone(field.value);
+      }
+    }
+
     function buildPayload() {
       var formData = new FormData();
       ["field-0", "field-1", "field-2"].forEach(function (fieldId) {
         var field = document.getElementById(fieldId);
-        formData.append(fieldId, field ? field.value.trim() : "");
+        var value = field ? field.value.trim() : "";
+
+        if (fieldId === "field-2") {
+          value = normalizeSpanishPhone(value);
+          if (field) {
+            field.value = value;
+          }
+        }
+
+        formData.append(fieldId, value);
       });
 
       document.querySelectorAll("[data-msf-radio-group]").forEach(function (group) {
@@ -820,6 +862,11 @@
       button.addEventListener("click", previousStep);
     });
 
+    var phoneField = document.getElementById("field-2");
+    if (phoneField) {
+      phoneField.addEventListener("blur", preparePhoneField);
+    }
+
     form.querySelectorAll("[data-msf-radio-group] input[type='radio']").forEach(function (radio) {
       radio.addEventListener("click", function () {
         if (radio.checked) {
@@ -831,6 +878,7 @@
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       clearError();
+      preparePhoneField();
 
       if (!form.checkValidity()) {
         form.reportValidity();
@@ -848,8 +896,8 @@
           if (!response.ok) {
             throw new Error("Request failed");
           }
-          form.classList.add("hidden");
-          success.classList.remove("hidden");
+          form.hidden = true;
+          success.hidden = false;
         })
         .catch(function () {
           setError("No se ha podido enviar el formulario. Inténtalo de nuevo en unos minutos.");
