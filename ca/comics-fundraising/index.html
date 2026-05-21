@@ -536,23 +536,26 @@
     }
 
     function buildPayload() {
-      var formData = new FormData();
-      [
-        "first_name",
-        "last_name",
-        "email",
-        "ngo_website",
-        "co_protagonist_name",
-        "relationship"
-      ].forEach(function (fieldId) {
+      var fieldMap = {
+        user_name: "first_name",
+        user_surname: "last_name",
+        user_email: "email",
+        ong_website: "ngo_website",
+        coprotagonist_name: "co_protagonist_name",
+        relation: "relationship"
+      };
+      var payload = {};
+
+      Object.keys(fieldMap).forEach(function (payloadKey) {
+        var fieldId = fieldMap[payloadKey];
         var field = document.getElementById(fieldId);
-        formData.append(fieldId, field ? field.value.trim() : "");
+        payload[payloadKey] = field ? field.value.trim() : "";
       });
 
-      formData.append("language", "ca");
-      formData.append("privacy_consent", document.getElementById("privacy_consent").checked ? "true" : "false");
-      formData.append("communications_consent", document.getElementById("communications_consent").checked ? "true" : "false");
-      return formData;
+      payload.language = "ca";
+      payload.privacy_consent = document.getElementById("privacy_consent").checked;
+      payload.communications_consent = document.getElementById("communications_consent").checked;
+      return payload;
     }
 
     form.addEventListener("submit", function (event) {
@@ -567,7 +570,13 @@
       setSubmitting(true);
 
       var request = endpoint
-        ? fetch(endpoint, { method: "POST", body: buildPayload() })
+        ? fetch(endpoint, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(buildPayload())
+          })
         : Promise.resolve({ ok: true });
 
       request
