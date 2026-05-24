@@ -30,11 +30,11 @@
       
     
       
-<meta name="description" content="Formulario para crear una historia de fundraising en formato cómic." />
+<meta name="description" content="Formulario para crear un cómic personalizado para ONGs." />
       
     
       
-<meta property="og:description" content="Formulario para crear una historia de fundraising en formato cómic." />
+<meta property="og:description" content="Formulario para crear un cómic personalizado para ONGs." />
       
     
       
@@ -64,7 +64,7 @@
       
     
       
-{"@context":"https://schema.org","@type":"WebPage","description":"Formulario para crear una historia de fundraising en formato cómic.","headline":"Comics Fundraising","url":"https://al6ert.github.io/website.stage/ca/comics-fundraising/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Formulario para crear un cómic personalizado para ONGs.","headline":"Comics Fundraising","url":"https://al6ert.github.io/website.stage/ca/comics-fundraising/"}</script>
       
     
       
@@ -426,12 +426,12 @@
     <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
       <div class="flow lg:sticky lg:top-24">
         <p class="font-subtitle text-lg uppercase tracking-normal text-accent">Comics Fundraising</p>
-        <h1 class="h1 text-gradient-primary">Explica'ns la vostra història</h1>
-        <p class="section-subtitle max-w-xl">Completa aquest formulari i prepararem la base per transformar la vostra relació en una història de fundraising en format còmic.</p>
+        <h1 class="h1 text-gradient-primary">Regala un còmic que explica per què importa la teva causa</h1>
+        <p class="section-subtitle max-w-xl">Completa aquest formulari i posarem en marxa un còmic personalitzat per a algú proper.</p>
         <div class="max-w-xl text-sm leading-7">
-          <p>Necessitem unes dades bàsiques per entendre qui ets, quina organització representes i qui serà la coprotagonista de la història.</p>
+          <p>A partir del web de la teva ONG investiguem la seva causa, escrivim una història breu i generem un PDF llest per enviar per email.</p>
 
-<p>Amb aquesta informació podrem preparar el pas següent del procés.</p>
+<p>El còmic no és un fullet institucional: la causa crea el món de la història, però el centre emocional sou tu i la persona a qui vols regalar alguna cosa memorable.</p>
 
         </div>
       </div>
@@ -457,18 +457,18 @@
             </label>
 
             <label class="comics-fundraising-field">
-              <span class="comics-fundraising-label">Website de l'ONG <span class="comics-fundraising-required">*</span></span>
+              <span class="comics-fundraising-label">Web de l'ONG <span class="comics-fundraising-required">*</span></span>
               <input class="input input-bordered w-full" id="ngo_website" name="ngo_website" type="url" autocomplete="url" inputmode="url" placeholder="https://www.latevaong.org" required="" />
             </label>
 
             <label class="comics-fundraising-field">
-              <span class="comics-fundraising-label">Nom de la coprotagonista <span class="comics-fundraising-required">*</span></span>
-              <input class="input input-bordered w-full" id="co_protagonist_name" name="co_protagonist_name" type="text" placeholder="Nom de la persona coprotagonista" required="" />
+              <span class="comics-fundraising-label">Per a qui és el regal? <span class="comics-fundraising-required">*</span></span>
+              <input class="input input-bordered w-full" id="co_protagonist_name" name="co_protagonist_name" type="text" placeholder="Nom de la persona que apareixerà amb tu" required="" />
             </label>
 
             <label class="comics-fundraising-field">
-              <span class="comics-fundraising-label">Relació que us uneix <span class="comics-fundraising-required">*</span></span>
-              <textarea class="textarea textarea-bordered w-full" id="relationship" name="relationship" placeholder="Explica'ns breument la vostra relació" required=""></textarea>
+              <span class="comics-fundraising-label">Quina relació us uneix? <span class="comics-fundraising-required">*</span></span>
+              <textarea class="textarea textarea-bordered w-full" id="relationship" name="relationship" placeholder="Ex.: és la meva filla de 9 anys, la meva parella, la meva mare, el meu company d'equip..." required=""></textarea>
             </label>
 
             <div class="comics-fundraising-consents">
@@ -479,15 +479,11 @@
                 </span>
               </label>
 
-              <label class="comics-fundraising-consent">
-                <input class="checkbox checkbox-primary" id="communications_consent" name="communications_consent" type="checkbox" value="true" />
-                <span class="text-sm leading-6">Accepto rebre comunicacions relacionades amb serveis, continguts i novetats de Persualia.</span>
-              </label>
             </div>
 
             <button class="btn btn-primary btn-lg w-full" id="comics-fundraising-submit" type="submit">
               <span class="loading loading-spinner hidden" id="comics-fundraising-spinner" aria-hidden="true"></span>
-              Enviar
+              Crear el meu còmic
             </button>
 
             <div class="rounded-box bg-error/10 p-4 text-sm text-error hidden" id="comics-fundraising-error" role="alert"></div>
@@ -497,8 +493,8 @@
             <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-success/20 text-success">
               <i class="fa-solid fa-circle-check text-3xl" aria-hidden="true"></i>
             </div>
-            <h2 class="h2">Formulari enviat</h2>
-            <p class="section-subtitle mx-auto">Hem rebut la informació correctament.</p>
+            <h2 class="h2">El teu còmic ja està en marxa</h2>
+            <p class="section-subtitle mx-auto" id="comics-fundraising-success-body">Hem rebut la teva sol·licitud. T'enviarem el PDF a {email} tan bon punt estigui llest.</p>
           </div>
         </div>
       </div>
@@ -514,8 +510,11 @@
     var error = document.getElementById("comics-fundraising-error");
     var submit = document.getElementById("comics-fundraising-submit");
     var spinner = document.getElementById("comics-fundraising-spinner");
+    var successBody = document.getElementById("comics-fundraising-success-body");
     var messages = {
-      submitError: "No s'ha pogut enviar el formulari. Torna-ho a intentar d'aqui a uns minuts."
+      submitError: "No s'ha pogut enviar el formulari. Torna-ho a intentar d'aquí a uns minuts.",
+      repeatedEmail: "Ja hem generat un còmic per a {email}. Si creus que és un error, contacta amb Persualia.",
+      successBody: "Hem rebut la teva sol·licitud. T'enviarem el PDF a {email} tan bon punt estigui llest."
     };
 
     if (!form) return;
@@ -533,6 +532,31 @@
     function setSubmitting(isSubmitting) {
       submit.disabled = isSubmitting;
       spinner.classList.toggle("hidden", !isSubmitting);
+    }
+
+    function formatMessage(template, values) {
+      return template.replace(/\{(\w+)\}/g, function (match, key) {
+        return Object.prototype.hasOwnProperty.call(values, key) ? values[key] : match;
+      });
+    }
+
+    function readJsonResponse(response) {
+      return response.text().then(function (text) {
+        var data = {};
+
+        if (text) {
+          try {
+            data = JSON.parse(text);
+          } catch (parseError) {
+            data = {};
+          }
+        }
+
+        return {
+          data: data,
+          response: response
+        };
+      });
     }
 
     function buildPayload() {
@@ -554,7 +578,7 @@
 
       payload.language = "ca";
       payload.privacy_consent = document.getElementById("privacy_consent").checked;
-      payload.communications_consent = document.getElementById("communications_consent").checked;
+      payload.communications_consent = false;
       return payload;
     }
 
@@ -569,22 +593,38 @@
 
       setSubmitting(true);
 
+      var payload = buildPayload();
       var request = endpoint
         ? fetch(endpoint, {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
             },
-            body: JSON.stringify(buildPayload())
+            body: JSON.stringify(payload)
           })
-        : Promise.resolve({ ok: true });
+        : Promise.resolve({
+            ok: true,
+            text: function () {
+              return Promise.resolve("{}");
+            }
+          });
 
       request
-        .then(function (response) {
-          if (!response.ok) {
+        .then(readJsonResponse)
+        .then(function (result) {
+          if (!result.response.ok) {
+            if (
+              result.response.status === 409 &&
+              result.data.reason === "repeated_email_submission"
+            ) {
+              setError(formatMessage(messages.repeatedEmail, { email: payload.user_email }));
+              return;
+            }
+
             throw new Error("Request failed");
           }
 
+          successBody.textContent = formatMessage(messages.successBody, { email: payload.user_email });
           form.hidden = true;
           success.hidden = false;
         })

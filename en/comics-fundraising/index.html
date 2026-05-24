@@ -30,11 +30,11 @@
       
     
       
-<meta name="description" content="Formulario para crear una historia de fundraising en formato cómic." />
+<meta name="description" content="Formulario para crear un cómic personalizado para ONGs." />
       
     
       
-<meta property="og:description" content="Formulario para crear una historia de fundraising en formato cómic." />
+<meta property="og:description" content="Formulario para crear un cómic personalizado para ONGs." />
       
     
       
@@ -64,7 +64,7 @@
       
     
       
-{"@context":"https://schema.org","@type":"WebPage","description":"Formulario para crear una historia de fundraising en formato cómic.","headline":"Comics Fundraising","url":"https://al6ert.github.io/website.stage/en/comics-fundraising/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Formulario para crear un cómic personalizado para ONGs.","headline":"Comics Fundraising","url":"https://al6ert.github.io/website.stage/en/comics-fundraising/"}</script>
       
     
       
@@ -426,12 +426,12 @@
     <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
       <div class="flow lg:sticky lg:top-24">
         <p class="font-subtitle text-lg uppercase tracking-normal text-accent">Comics Fundraising</p>
-        <h1 class="h1 text-gradient-primary">Tell us your story</h1>
-        <p class="section-subtitle max-w-xl">Complete this form and we will prepare the foundation to turn your relationship into a fundraising story in comic format.</p>
+        <h1 class="h1 text-gradient-primary">Give someone a comic that shows why your cause matters</h1>
+        <p class="section-subtitle max-w-xl">Complete this form and we will start a personalized comic for someone close to you.</p>
         <div class="max-w-xl text-sm leading-7">
-          <p>We need a few basic details to understand who you are, which organization you represent, and who the co-protagonist of the story will be.</p>
+          <p>From your NGO website, we research the cause, write a short story, and generate a PDF ready to send by email.</p>
 
-<p>With this information we can prepare the next step in the process.</p>
+<p>The comic is not an institutional brochure: the cause creates the world of the story, but the emotional center is you and the person you want to surprise.</p>
 
         </div>
       </div>
@@ -462,13 +462,13 @@
             </label>
 
             <label class="comics-fundraising-field">
-              <span class="comics-fundraising-label">Co-protagonist name <span class="comics-fundraising-required">*</span></span>
-              <input class="input input-bordered w-full" id="co_protagonist_name" name="co_protagonist_name" type="text" placeholder="Name of the co-protagonist" required="" />
+              <span class="comics-fundraising-label">Who is the gift for? <span class="comics-fundraising-required">*</span></span>
+              <input class="input input-bordered w-full" id="co_protagonist_name" name="co_protagonist_name" type="text" placeholder="Name of the person who will appear with you" required="" />
             </label>
 
             <label class="comics-fundraising-field">
-              <span class="comics-fundraising-label">Relationship between you <span class="comics-fundraising-required">*</span></span>
-              <textarea class="textarea textarea-bordered w-full" id="relationship" name="relationship" placeholder="Briefly explain your relationship" required=""></textarea>
+              <span class="comics-fundraising-label">What is your relationship? <span class="comics-fundraising-required">*</span></span>
+              <textarea class="textarea textarea-bordered w-full" id="relationship" name="relationship" placeholder="E.g. my 9-year-old daughter, my partner, my mother, my teammate..." required=""></textarea>
             </label>
 
             <div class="comics-fundraising-consents">
@@ -479,15 +479,11 @@
                 </span>
               </label>
 
-              <label class="comics-fundraising-consent">
-                <input class="checkbox checkbox-primary" id="communications_consent" name="communications_consent" type="checkbox" value="true" />
-                <span class="text-sm leading-6">I agree to receive communications related to Persualia services, content, and updates.</span>
-              </label>
             </div>
 
             <button class="btn btn-primary btn-lg w-full" id="comics-fundraising-submit" type="submit">
               <span class="loading loading-spinner hidden" id="comics-fundraising-spinner" aria-hidden="true"></span>
-              Send
+              Create my comic
             </button>
 
             <div class="rounded-box bg-error/10 p-4 text-sm text-error hidden" id="comics-fundraising-error" role="alert"></div>
@@ -497,8 +493,8 @@
             <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-success/20 text-success">
               <i class="fa-solid fa-circle-check text-3xl" aria-hidden="true"></i>
             </div>
-            <h2 class="h2">Form submitted</h2>
-            <p class="section-subtitle mx-auto">We have received the information correctly.</p>
+            <h2 class="h2">Your comic is underway</h2>
+            <p class="section-subtitle mx-auto" id="comics-fundraising-success-body">We have received your request. We will send the PDF to {email} as soon as it is ready.</p>
           </div>
         </div>
       </div>
@@ -514,8 +510,11 @@
     var error = document.getElementById("comics-fundraising-error");
     var submit = document.getElementById("comics-fundraising-submit");
     var spinner = document.getElementById("comics-fundraising-spinner");
+    var successBody = document.getElementById("comics-fundraising-success-body");
     var messages = {
-      submitError: "The form could not be submitted. Please try again in a few minutes."
+      submitError: "The form could not be submitted. Please try again in a few minutes.",
+      repeatedEmail: "We have already generated a comic for {email}. If you think this is a mistake, please contact Persualia.",
+      successBody: "We have received your request. We will send the PDF to {email} as soon as it is ready."
     };
 
     if (!form) return;
@@ -533,6 +532,31 @@
     function setSubmitting(isSubmitting) {
       submit.disabled = isSubmitting;
       spinner.classList.toggle("hidden", !isSubmitting);
+    }
+
+    function formatMessage(template, values) {
+      return template.replace(/\{(\w+)\}/g, function (match, key) {
+        return Object.prototype.hasOwnProperty.call(values, key) ? values[key] : match;
+      });
+    }
+
+    function readJsonResponse(response) {
+      return response.text().then(function (text) {
+        var data = {};
+
+        if (text) {
+          try {
+            data = JSON.parse(text);
+          } catch (parseError) {
+            data = {};
+          }
+        }
+
+        return {
+          data: data,
+          response: response
+        };
+      });
     }
 
     function buildPayload() {
@@ -554,7 +578,7 @@
 
       payload.language = "en";
       payload.privacy_consent = document.getElementById("privacy_consent").checked;
-      payload.communications_consent = document.getElementById("communications_consent").checked;
+      payload.communications_consent = false;
       return payload;
     }
 
@@ -569,22 +593,38 @@
 
       setSubmitting(true);
 
+      var payload = buildPayload();
       var request = endpoint
         ? fetch(endpoint, {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
             },
-            body: JSON.stringify(buildPayload())
+            body: JSON.stringify(payload)
           })
-        : Promise.resolve({ ok: true });
+        : Promise.resolve({
+            ok: true,
+            text: function () {
+              return Promise.resolve("{}");
+            }
+          });
 
       request
-        .then(function (response) {
-          if (!response.ok) {
+        .then(readJsonResponse)
+        .then(function (result) {
+          if (!result.response.ok) {
+            if (
+              result.response.status === 409 &&
+              result.data.reason === "repeated_email_submission"
+            ) {
+              setError(formatMessage(messages.repeatedEmail, { email: payload.user_email }));
+              return;
+            }
+
             throw new Error("Request failed");
           }
 
+          successBody.textContent = formatMessage(messages.successBody, { email: payload.user_email });
           form.hidden = true;
           success.hidden = false;
         })
