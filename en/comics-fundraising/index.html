@@ -425,13 +425,13 @@
   <div class="container">
     <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
       <div class="flow lg:sticky lg:top-24">
-        <p class="font-subtitle text-lg uppercase tracking-normal text-accent">Comics Fundraising</p>
-        <h1 class="h1 text-gradient-primary">Give someone a comic that shows why your cause matters</h1>
-        <p class="section-subtitle max-w-xl">Complete this form and we will start a personalized comic for someone close to you.</p>
+        <p class="font-subtitle text-lg uppercase tracking-normal text-accent">Comics for a cause</p>
+        <h3 class="h3 text-gradient-primary">What would a comic starring you, someone you love, and the cause you work for look like?</h3>
+        <p class="section-subtitle max-w-xl">Create a unique AI-generated comic that turns your organization's work into a personalized, emotional story that is easy to share.</p>
         <div class="max-w-xl text-sm leading-7">
-          <p>From your NGO website, we research the cause, write a short story, and generate a PDF ready to send by email.</p>
+          <p>Using the details provided, the application generates a different story every time:</p>
 
-<p>The comic is not an institutional brochure: the cause creates the world of the story, but the emotional center is you and the person you want to surprise.</p>
+<p>It explains the reality the organization addresses, shows how it works, and turns it all into a personalized, emotional experience ready to give as a gift.</p>
 
         </div>
       </div>
@@ -458,7 +458,8 @@
 
             <label class="comics-fundraising-field">
               <span class="comics-fundraising-label">NGO website <span class="comics-fundraising-required">*</span></span>
-              <input class="input input-bordered w-full" id="ngo_website" name="ngo_website" type="url" autocomplete="url" inputmode="url" placeholder="https://www.yourngo.org" required="" />
+              <input class="input input-bordered w-full" id="ngo_website" name="ngo_website" type="url" autocomplete="url" inputmode="url" placeholder="https://www.yourngo.org" aria-describedby="ngo_website_hint" required="" />
+              <span class="text-sm text-base-content/70" id="ngo_website_hint">Add the full URL, including https://</span>
             </label>
 
             <label class="comics-fundraising-field">
@@ -475,7 +476,7 @@
               <label class="comics-fundraising-consent">
                 <input class="checkbox checkbox-primary" id="privacy_consent" name="privacy_consent" type="checkbox" value="true" required="" />
                 <span class="text-sm leading-6">
-                  I agree that Persualia may process my data to manage this request and contact me about Comics Fundraising. <span class="comics-fundraising-required">*</span>
+                  I agree that Persualia may process the data provided in this form solely to personalize, generate, and email me the requested comic. Persualia will not use this data for marketing communications. <span class="comics-fundraising-required">*</span>
                 </span>
               </label>
 
@@ -483,7 +484,7 @@
 
             <button class="btn btn-primary btn-lg w-full" id="comics-fundraising-submit" type="submit">
               <span class="loading loading-spinner hidden" id="comics-fundraising-spinner" aria-hidden="true"></span>
-              Create my comic
+              Create my personalized comic
             </button>
 
             <div class="rounded-box bg-error/10 p-4 text-sm text-error hidden" id="comics-fundraising-error" role="alert"></div>
@@ -494,7 +495,7 @@
               <i class="fa-solid fa-circle-check text-3xl" aria-hidden="true"></i>
             </div>
             <h2 class="h2">Your comic is underway</h2>
-            <p class="section-subtitle mx-auto" id="comics-fundraising-success-body">We have received your request. We will send the PDF to {email} as soon as it is ready.</p>
+            <p class="section-subtitle mx-auto" id="comics-fundraising-success-body">We have received your request. We are generating your personalized comic and will send it to {email}. You will receive it in the next few hours.</p>
           </div>
         </div>
       </div>
@@ -511,10 +512,12 @@
     var submit = document.getElementById("comics-fundraising-submit");
     var spinner = document.getElementById("comics-fundraising-spinner");
     var successBody = document.getElementById("comics-fundraising-success-body");
+    var ngoWebsite = document.getElementById("ngo_website");
     var messages = {
       submitError: "The form could not be submitted. Please try again in a few minutes.",
       repeatedEmail: "We have already generated a comic for {email}. If you think this is a mistake, please contact Persualia.",
-      successBody: "We have received your request. We will send the PDF to {email} as soon as it is ready."
+      invalidNgoWebsite: "Add the full URL, including https://",
+      successBody: "We have received your request. We are generating your personalized comic and will send it to {email}. You will receive it in the next few hours."
     };
 
     if (!form) return;
@@ -538,6 +541,14 @@
       return template.replace(/\{(\w+)\}/g, function (match, key) {
         return Object.prototype.hasOwnProperty.call(values, key) ? values[key] : match;
       });
+    }
+
+    function validateNgoWebsite() {
+      if (!ngoWebsite) return;
+
+      var value = ngoWebsite.value.trim();
+      var needsHttps = value && !/^https:\/\//i.test(value);
+      ngoWebsite.setCustomValidity(needsHttps ? messages.invalidNgoWebsite : "");
     }
 
     function readJsonResponse(response) {
@@ -585,6 +596,7 @@
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       clearError();
+      validateNgoWebsite();
 
       if (!form.checkValidity()) {
         form.reportValidity();
@@ -635,6 +647,11 @@
           setSubmitting(false);
         });
     });
+
+    if (ngoWebsite) {
+      ngoWebsite.addEventListener("input", validateNgoWebsite);
+      ngoWebsite.addEventListener("blur", validateNgoWebsite);
+    }
   })();
 </script>
 
