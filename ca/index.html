@@ -5,6 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+<!-- Google Tag Manager -->
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WXFRDJP');
+</script>
+<!-- End Google Tag Manager -->
+
+
+    
     
     <!-- Título dinámico para home con i18n -->
     <title>Enginyeria de conversió | Persualia</title>
@@ -79,6 +91,16 @@
 </head>
 
   <body>
+    
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXFRDJP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
     <header class="navbar bg-base-300 shadow-sm sticky top-0 z-50 px-4 md:px-8" data-i18n-header>
   <div class="navbar-start gap-2">
     <!-- Mobile Dropdown Menu - Moved to the left, before logo -->
@@ -1644,7 +1666,7 @@
     };
     
     return (
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form id="contact-form-component" onSubmit={handleSubmit} className="space-y-6">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Nombre</span>
