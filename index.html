@@ -324,103 +324,7 @@
 
     
     <main class="min-h-screen">
-      <style>
-  .home-comics-banner {
-    background: var(--color-primary);
-    border-radius: var(--radius-box, 1rem);
-    color: var(--color-primary-content);
-    display: grid;
-    min-height: 300px;
-    overflow: hidden;
-    position: relative;
-    text-decoration: none;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-  }
-
-  .home-comics-banner:hover {
-    box-shadow: 0 24px 60px -24px oklch(from var(--color-primary) l c h / 0.65);
-    color: var(--color-primary-content);
-    transform: translateY(-2px);
-  }
-
-  .home-comics-banner__media {
-    min-height: 220px;
-    position: relative;
-  }
-
-  .home-comics-banner__media img {
-    height: 100%;
-    inset: 0;
-    object-fit: cover;
-    object-position: left center;
-    position: absolute;
-    width: 100%;
-  }
-
-  .home-comics-banner__media::after {
-    background: linear-gradient(
-      90deg,
-      oklch(from var(--color-primary) l c h / 0) 0%,
-      oklch(from var(--color-primary) l c h / 0.04) 58%,
-      oklch(from var(--color-primary) l c h / 0.72) 76%,
-      var(--color-primary) 100%
-    );
-    content: "";
-    inset: 0;
-    position: absolute;
-  }
-
-  .home-comics-banner__content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.875rem;
-    justify-content: center;
-    padding: 1.5rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .home-comics-banner__kicker {
-    color: var(--color-secondary);
-    font-size: 0.875rem;
-    font-weight: 700;
-    letter-spacing: 0;
-    text-transform: uppercase;
-  }
-
-  .home-comics-banner__title {
-    color: var(--color-primary-content);
-    font-size: clamp(1.75rem, 2.6vw, 2.6rem);
-    line-height: 1.08;
-    margin: 0;
-    max-width: 18ch;
-  }
-
-  .home-comics-banner__body {
-    color: oklch(from var(--color-primary-content) l c h / 0.82);
-    font-size: 1rem;
-    line-height: 1.65;
-    margin: 0;
-    max-width: 34rem;
-  }
-
-  @media (min-width: 1024px) {
-    .home-comics-banner {
-      grid-template-columns: minmax(0, 1.2fr) minmax(22rem, 0.8fr);
-    }
-
-    .home-comics-banner__media {
-      min-height: 320px;
-    }
-
-    .home-comics-banner__content {
-      margin-left: -3rem;
-      padding: 2.25rem;
-    }
-  }
-</style>
-
-<script id="permalink-map" type="application/json">
+      <script id="permalink-map" type="application/json">
 {"es":"/","en":"/en/","ca":"/ca/"}
 </script>
 
@@ -968,20 +872,117 @@
 
         
         
-        <a href="/website.stage/comics-fundraising/" class="home-comics-banner shadow-sm lg:col-span-2" data-reveal>
-          <figure class="home-comics-banner__media" aria-hidden="true">
-            <img src="/website.stage/assets/images/comics-fundraising/comics-banner-img.webp" alt="" loading="lazy">
-          </figure>
-          <div class="home-comics-banner__content">
-            <span class="home-comics-banner__kicker">Cómics con causa</span>
-            <h2 class="home-comics-banner__title">Convierte tu causa en una historia personalizada</h2>
-            <p class="home-comics-banner__body">Crea un cómic generado con IA para explicar la labor de tu organización de forma emocional, memorable y fácil de compartir.</p>
-            <span class="btn btn-secondary w-fit">
-              Crear mi cómic
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            </span>
-          </div>
-        </a>
+
+<style>
+  .home-comics-banner {
+    background: var(--color-primary);
+    border-radius: var(--radius-box, 1rem);
+    color: var(--color-primary-content);
+    display: grid;
+    min-height: 300px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .home-comics-banner:hover {
+    box-shadow: 0 24px 60px -24px oklch(from var(--color-primary) l c h / 0.65);
+    color: var(--color-primary-content);
+    transform: translateY(-2px);
+  }
+
+  .home-comics-banner__media {
+    min-height: 220px;
+    position: relative;
+  }
+
+  .home-comics-banner__media img {
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    object-position: left center;
+    position: absolute;
+    width: 100%;
+  }
+
+  .home-comics-banner__media::after {
+    background: linear-gradient(
+      90deg,
+      oklch(from var(--color-primary) l c h / 0) 0%,
+      oklch(from var(--color-primary) l c h / 0.04) 58%,
+      oklch(from var(--color-primary) l c h / 0.72) 76%,
+      var(--color-primary) 100%
+    );
+    content: "";
+    inset: 0;
+    position: absolute;
+  }
+
+  .home-comics-banner__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-comics-banner__kicker {
+    color: var(--color-secondary);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .home-comics-banner__title {
+    color: var(--color-primary-content);
+    font-size: clamp(1.75rem, 2.6vw, 2.6rem);
+    line-height: 1.08;
+    margin: 0;
+    max-width: 18ch;
+  }
+
+  .home-comics-banner__body {
+    color: oklch(from var(--color-primary-content) l c h / 0.82);
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 0;
+    max-width: 34rem;
+  }
+
+  @media (min-width: 1024px) {
+    .home-comics-banner {
+      grid-template-columns: minmax(0, 1.2fr) minmax(22rem, 0.8fr);
+    }
+
+    .home-comics-banner__media {
+      min-height: 320px;
+    }
+
+    .home-comics-banner__content {
+      margin-left: -3rem;
+      padding: 2.25rem;
+    }
+  }
+</style>
+
+<a href="/website.stage/comics-fundraising/" class="home-comics-banner shadow-sm lg:col-span-2" data-reveal>
+  <figure class="home-comics-banner__media" aria-hidden="true">
+    <img src="/website.stage/assets/images/comics-fundraising/comics-banner-img.webp" alt="" loading="lazy">
+  </figure>
+  <div class="home-comics-banner__content">
+    <span class="home-comics-banner__kicker">Cómics con causa</span>
+    <h2 class="home-comics-banner__title">Una nueva forma de captar leads</h2>
+    <p class="home-comics-banner__body">Prueba una experiencia generada con IA que muestra cómo una campaña puede recoger datos, aportar valor y explicar una causa de forma personalizada.</p>
+    <span class="btn btn-secondary w-fit">
+      Probar la demo →
+    </span>
+  </div>
+</a>
+
       </div>
   </div>
 </section>
